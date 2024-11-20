@@ -2,7 +2,7 @@ services:
   mariadb:
     image: docker.io/bitnami/mariadb:11.4
     volumes:
-      - /path/to/mariadb-persistence:/bitnami/mariadb
+      - /Docker/mariadb-persistence:/bitnami/mariadb
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
@@ -14,7 +14,7 @@ services:
       - '80:8080'
       - '443:8443'
     volumes:
-      - /path/to/wordpress-persistence:/bitnami/wordpress
+      - /Docker/wordpress-persistence:/bitnami/wordpress
     depends_on:
       - mariadb
     environment:
